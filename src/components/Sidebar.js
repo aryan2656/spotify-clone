@@ -50,7 +50,7 @@ export default function Sidebar(){
       <Line></Line>
       {
         playlists?.items?.map(playlists => (
-          <SidebarOption title={playlists}></SidebarOption>
+          <SidebarOption title={playlists.name} key={playlists.id}></SidebarOption>
         ))
       }
     </Container>);

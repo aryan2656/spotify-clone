@@ -21,6 +21,7 @@ export  default function App(){
             type:'SET_TOKEN',
             token:_token, 
         });
+        setToken(_token);
         console.log("[token]",token);
         spotify.setAccessToken(_token);
         spotify.getMe().then((user) => { 
@@ -35,6 +36,13 @@ export  default function App(){
                 playlists,
             });
             console.log(playlists);
+        });
+        spotify.getMySavedTracks().then((tracks)=> {
+            dispatch({
+                type:'SET_SAVED_TRACKS',
+                tracks,
+            });
+            console.log("Saved Tracks",tracks);
         });
     }
 

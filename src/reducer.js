@@ -1,13 +1,14 @@
  export const initialState = {
     user:null,
-    token:null,
+    token:false,
     playlists:[],
     playing:false,
-    item:null,  
+    item:null,
+    tracks:null,  
 };
 
 const reducer = (state,action) => {
-    console.log(action);
+    console.log("Reducer",action);
 
     // Action -> type, [payload]
 
@@ -27,10 +28,10 @@ const reducer = (state,action) => {
                 ...state,
                 playlists:action.playlists,
             };
-        case "SET_DISCOVER_WEEKLY":
+        case "SET_SAVED_TRACKS":
             return {
                 ...state,
-                discover_weekly:action.discover_weekly,
+                tracks:action.tracks,
             };
         default:
             return state;

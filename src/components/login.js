@@ -27,6 +27,7 @@ background-color:#1DB954;
 text-align:center;
 border-radius:40px;
 font-weight:550;
+padding-top:20px;
 `;
 
 export default function Login(){
